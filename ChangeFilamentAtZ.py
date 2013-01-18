@@ -1,8 +1,8 @@
-#Name: Pause at Z for filament change
+#Name: Change Filament At Z
 #Info: Pause the print at a certain height, move to a specified parking location, disable extruder stepper
 #Depend: GCode
 #Type: postprocess
-#Param: pauseZ(float:5.0) Pause Z height (mm)
+#Param: targetZ(float:5.0) Z height to pause at (mm)
 #Param: parkX(float:190) Head park X (mm)
 #Param: parkY(float:190) Head park Y (mm)
 #Param: parkZ(float:190) Head park Z (mm)
@@ -37,9 +37,9 @@ with open(filename, "w") as f:
 			y = getValue(line, 'Y', y)
 			if newZ != z:
 				z = newZ
-				if z < pauseZ and pauseState == 0:
+				if z < targetZ and pauseState == 0:
 					pauseState = 1
-				if z >= pauseZ and pauseState == 1:
+				if z >= targetZ and pauseState == 1:
 					pauseState = 2
 					# Retract
 					f.write("M83\n")		# Set E codes relative while in Absolute Coordinates (G90) 
