@@ -1,5 +1,6 @@
 #Name: Change Filament At Z
 #Info: Pause the print at a certain height, move to a specified parking location, disable extruder stepper
+#Help: ChangeFilamentAtZ
 #Depend: GCode
 #Type: postprocess
 #Param: targetZ(float:5.0) Z height to pause at (mm)
