@@ -6,7 +6,7 @@
 #Param: targetZ(float:5.0) Z height to pause at (mm)
 #Param: parkX(float:190) Head park X (mm)
 #Param: parkY(float:190) Head park Y (mm)
-#Param: parkZ(float:190) Head park Z (mm)
+#Param: parkZ(float:150) Head park Z (mm)
 #Param: retractAmount(float:5) Retraction amount (mm)
 
 import re
@@ -42,6 +42,7 @@ with open(filename, "w") as f:
 					pauseState = 1
 				if z >= targetZ and pauseState == 1:
 					pauseState = 2
+					f.write("; Plugin: start ChangeFilamentAtZ\n")
 					# Retract
 					f.write("M83\n")		# Set E codes relative while in Absolute Coordinates (G90) 
 					f.write("G1 E-%f F6000\n" % (retractAmount))
@@ -55,5 +56,6 @@ with open(filename, "w") as f:
 					f.write("G1 X%f Y%f F9000\n" % (x, y))
 					f.write("G1 E0 F6000\n")
 					f.write("G1 F9000\n")
-					f.write("M82\n")		# Set E codes absolute (default) 
+					f.write("M82\n")		# Set E codes absolute (default)
+					f.write("; Plugin: end ChangeFilamentAtZ\n")					
 		f.write(line)
