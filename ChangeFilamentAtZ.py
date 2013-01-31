@@ -9,6 +9,9 @@
 #Param: parkZ(float:150) Head park Z (mm)
 #Param: retractAmount(float:5) Retraction amount (mm)
 
+## Written by Steven Morlock, smorloc@gmail.com
+## This script is licensed under the Creative Commons - Attribution - Share Alike (CC BY-SA) terms
+
 import re
 
 def getValue(line, key, default = None):

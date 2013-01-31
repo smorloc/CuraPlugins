@@ -9,6 +9,9 @@
 #Param: extruderTwo(int:) New Extruder 2 Temp (deg C)
 #Param: extruderThree(int:) New Extruder 3 Temp (deg C)
 
+## Written by Steven Morlock, smorloc@gmail.com
+## This script is licensed under the Creative Commons - Attribution - Share Alike (CC BY-SA) terms
+
 # Uses -
 # M220 S<factor in percent> - set speed factor override percentage
 # M104 S<temp> T<0-#toolheads> - set extruder <T> to target temperature <S>
