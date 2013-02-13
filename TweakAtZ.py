@@ -16,6 +16,9 @@
 # M220 S<factor in percent> - set speed factor override percentage
 # M104 S<temp> T<0-#toolheads> - set extruder <T> to target temperature <S>
 
+# TODO:
+# M140 S<temp> - set bed target temperature
+
 import re
 
 def getValue(line, key, default = None):
